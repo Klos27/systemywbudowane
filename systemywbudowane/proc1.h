@@ -13,6 +13,7 @@ SC_MODULE(proc1) {
 	void task2();
 	void task3();
 	void task4();
+	void write_info(int info);
 
 	SC_CTOR(proc1)
 		: submod("submod")
@@ -25,7 +26,7 @@ SC_MODULE(proc1) {
 		sensitive << clock.pos();
 
 		SC_CTHREAD(task2, clock.pos());
-
+		
 		SC_CTHREAD(task3, clock.pos());
 
 		SC_CTHREAD(task4, clock.pos());

@@ -10,7 +10,7 @@ void submodule::task() {
 	int tmp = 1;
 	bool print = false;
 
-	while(tmp > 0){
+	while(tmp >= 0){
 		wait();
 		print = false;
 		// delete error
@@ -33,7 +33,6 @@ void submodule::task() {
 			case 22:
 			case 14:
 			case 15:
-				error = 0;
 				if(num_of_ppl > 0)
 					num_of_ppl--;
 				else
@@ -41,9 +40,9 @@ void submodule::task() {
 				print = true;
 				break;
 			// ERRORS
-			case 38:
-			case 39:
-			case 310:
+			case 32:
+			case 34:
+			case 35:
 				//display error
 				error = 1;
 				print = true;
@@ -60,7 +59,7 @@ void submodule::task() {
 
 		// PRINT INFO
 		if(print){
-			cout << "proc1-submodule: Room S1: " << num_of_ppl << " Light: ";
+			cout << "(proc1-submodule) Room S1: " << num_of_ppl << " Light: ";
 			if(light) cout << " On ";
 			else cout << " Off ";
 		

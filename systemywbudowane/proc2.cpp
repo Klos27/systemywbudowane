@@ -9,7 +9,7 @@ void proc2::task() {
 	int tmp = 1;
 	bool print = false;
 
-	while(tmp > 0){
+	while(tmp >= 0){
 		//wait();
 		print = false;
 		// delete error
@@ -30,7 +30,6 @@ void proc2::task() {
 				break;
 			case 23:
 			case 24:
-				error = 0;
 				if(num_of_ppl > 0)
 					num_of_ppl--;
 				else
@@ -56,7 +55,7 @@ void proc2::task() {
 
 		// PRINT INFO
 		if(print){
-			cout << "proc2-task: Room S3: " << num_of_ppl << " Light: ";
+			cout << "(proc2-task) Room S3: " << num_of_ppl << " Light: ";
 			if(light) cout << " On ";
 			else cout << " Off ";
 		
